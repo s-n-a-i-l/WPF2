@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Grid/Grid.csproj" Id="e89803ec-21a0-4ecc-b176-c84d1a687c44" />
+  <Project Path="WPF/WPF.csproj" Id="f7050442-74d0-41de-8b17-1289dbd968fd" />
+</Solution>
