@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Grid/Grid.csproj" Id="e89803ec-21a0-4ecc-b176-c84d1a687c44" />
+  <Project Path="MenuBar/MenuBar.csproj" Id="8526d435-b0a2-4e9d-8f18-48719bd12f03" />
   <Project Path="WPF/WPF.csproj" Id="f7050442-74d0-41de-8b17-1289dbd968fd" />
   <Project Path="WrK/WrK.csproj" Id="26c184f5-cb64-4e32-bf7e-3e91d38af5c3" />
 </Solution>
