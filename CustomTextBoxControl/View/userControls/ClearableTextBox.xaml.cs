@@ -32,18 +32,32 @@ namespace CustomTextBoxControl.View.userControls
         public ClearableTextBox()
         {
             InitializeComponent();
+
         }
 
         private void txtInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             tbPlaceholder.Visibility = txtInput.Text == " " ? Visibility.Visible: Visibility.Hidden;
-           //if(txtInput.Text.Length > 16) txtInput.Text = txtInput.Text.Substring(0, 16);
+            //if (txtInput.Text.Length > 19) 
+            //{ 
+            //  txtInput.Text = txtInput.Text.Substring(0, 19); 
+            //  txtInput.Select(txtInput.Text.Length, 0); 
+            //}
             //if(txtInput.Text.Length > 16)txtInput.Text = txtInput.Text.Substring(0, 16);
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
         {
             txtInput.Text = "";
+        }
+
+        private void txtInput_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter) 
+            {
+              Window window = Window.GetWindow(this);
+              
+            }
         }
     }
 }
