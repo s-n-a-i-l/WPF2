@@ -1,0 +1,18 @@
+﻿<Window x:Class="WrK.MainWindow" Icon="C:\Users\sevru\Pictures\laptop-bug_96899.ico"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WrK"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<Grid>
+		<Button Content="Knopka" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.483,0.541" FontSize="36">
+			<Button.Background>
+				<ImageBrush ImageSource="/minpsk.jpg"/>
+			</Button.Background>
+		</Button>
+		<Label Content="Text" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="45" Margin="0,94,0,0"/>
+
+	</Grid>
+</Window>
