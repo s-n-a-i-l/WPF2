@@ -16,7 +16,8 @@
 		
 		<TextBox Name="txtInput" Grid.Row="0"
 				 Width="250" Height="40"
-				 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+				 VerticalContentAlignment="Center" HorizontalContentAlignment="Center"
+				 Text="{Binding BoundText, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" />
 
 		<Button Name="btnSet" Grid.Row="1"
 				Width="250" Height="40"
@@ -24,6 +25,6 @@
 		
 		<TextBlock Name="tbResult" Grid.Row="2"
 				   HorizontalAlignment="Center" VerticalAlignment="Center"
-				   Text="Result" FontSize="32"/>
+				   Text="{Binding BoundText}" FontSize="32"/>
 	</Grid>
 </Window>
