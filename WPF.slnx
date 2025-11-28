@@ -1,7 +1,10 @@
 <Solution>
   <Project Path="Bimding/Bimding.csproj" Id="a54fdf11-85da-48cc-beca-9752bd56985b" />
   <Project Path="CustomTextBoxControl/CustomTextBoxControl.csproj" Id="f681f7b1-513c-4857-b253-7586e024c780" />
+  <Project Path="Dialogs/Dialogs.csproj" Id="9a1d348b-7d79-4b22-a11f-899348793876" />
   <Project Path="Grid/Grid.csproj" Id="e89803ec-21a0-4ecc-b176-c84d1a687c44" />
+  <Project Path="IpAdress/IpAdress.csproj" Id="15fa944d-eb06-417b-85e2-64ac8566598b" />
+  <Project Path="ListBox/ListBox.csproj" Id="95b5fc28-6ad1-44c7-8a3b-dec4bbdc065c" />
   <Project Path="MenuBar/MenuBar.csproj" Id="8526d435-b0a2-4e9d-8f18-48719bd12f03" />
   <Project Path="WPF/WPF.csproj" Id="f7050442-74d0-41de-8b17-1289dbd968fd" />
   <Project Path="WrK/WrK.csproj" Id="26c184f5-cb64-4e32-bf7e-3e91d38af5c3" />
