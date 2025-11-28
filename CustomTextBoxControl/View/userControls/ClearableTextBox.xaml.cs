@@ -53,11 +53,19 @@ namespace CustomTextBoxControl.View.userControls
 
         private void txtInput_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Key == Key.Enter) 
+            if (e.Key == Key.Enter)
             {
-              Window window = Window.GetWindow(this);
-              
+                TextBox tabNum = sender as TextBox;
+                
+                if (tabNum != null && !string.IsNullOrWhiteSpace(tabNum.Text))
+                {
+                    e.Handled = true; 
+                    tabNum.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));//проверка на наличие Text-а в поле
+                }
+                
             }
         }
+
+        
     }
 }

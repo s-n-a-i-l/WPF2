@@ -18,11 +18,11 @@
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 
-		<customTextBoxControl:ClearableTextBox Grid.Row="1" Height="40" Width="250" Placeholder="Last Name"/>
-		<customTextBoxControl:ClearableTextBox Grid.Row="2" Height="40" Width="250" Placeholder="First Name"/>
-		<customTextBoxControl:ClearableTextBox Grid.Row="3" Height="40" Width="250" Placeholder="Birth date"/>
-		<customTextBoxControl:ClearableTextBox Grid.Row="4" Height="40" Width="250" Placeholder="E-mail"/>
-		<customTextBoxControl:ClearableTextBox Grid.Row="5" Height="40" Width="250" Placeholder="Phone number"/>
+		<customTextBoxControl:ClearableTextBox Grid.Row="1" Height="40" Width="250" Placeholder="Last Name" TabIndex="0"/>
+		<customTextBoxControl:ClearableTextBox Grid.Row="2" Height="40" Width="250" Placeholder="First Name" TabIndex="1"/>
+		<customTextBoxControl:ClearableTextBox Grid.Row="3" Height="40" Width="250" Placeholder="Birth date" TabIndex="2"/>
+		<customTextBoxControl:ClearableTextBox Grid.Row="4" Height="40" Width="250" Placeholder="E-mail" TabIndex="3"/>
+		<customTextBoxControl:ClearableTextBox Grid.Row="5" Height="40" Width="250" Placeholder="Phone number" TabIndex="4"/>
 		
 	</Grid>
 </Window>

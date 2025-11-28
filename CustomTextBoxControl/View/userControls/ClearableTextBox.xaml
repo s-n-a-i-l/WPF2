@@ -9,16 +9,16 @@
 			 FontSize="22">
     <Grid Background="AliceBlue">
 		<TextBox Name="txtInput" VerticalContentAlignment="Center" Background="Transparent"
-				 TextChanged="txtInput_TextChanged" KeyDown="txtInput_KeyDown" TextAlignment ="Center"/>
+				 TextChanged="txtInput_TextChanged" KeyDown="txtInput_KeyDown" TextAlignment ="Center" HorizontalScrollBarVisibility="Hidden"/>
 		
 		<TextBlock Name="tbPlaceholder" Text="Placeholder"
 				   FontWeight="Light" Foreground="DarkGray"
 				   VerticalAlignment="Center" HorizontalAlignment="Center"
-				   Panel.ZIndex="-1"/>
+				   Panel.ZIndex="-1" />
 		
 		<Button Name="btnClear"  Width="30" HorizontalAlignment="Right" Content="x" 
 				Background="Transparent" Foreground="Gray" BorderThickness="0"
-				Click="btnClear_Click"/>
+				Click="btnClear_Click" IsTabStop="False"/>
 		
 	</Grid>
 </UserControl>
