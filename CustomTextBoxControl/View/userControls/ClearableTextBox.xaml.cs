@@ -38,12 +38,12 @@ namespace CustomTextBoxControl.View.userControls
         private void txtInput_TextChanged(object sender, TextChangedEventArgs e)
         {
             tbPlaceholder.Visibility = txtInput.Text == " " ? Visibility.Visible: Visibility.Hidden;
-            //if (txtInput.Text.Length > 19) 
-            //{ 
-            //  txtInput.Text = txtInput.Text.Substring(0, 19); 
-            //  txtInput.Select(txtInput.Text.Length, 0); 
-            //}
-            //if(txtInput.Text.Length > 16)txtInput.Text = txtInput.Text.Substring(0, 16);
+            if (txtInput.Text.Length > 16)
+            {
+                txtInput.Text = txtInput.Text.Substring(0, 16);
+                txtInput.Select(txtInput.Text.Length, 0);
+            }
+            
         }
 
         private void btnClear_Click(object sender, RoutedEventArgs e)
