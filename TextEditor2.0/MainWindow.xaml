@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:TextEditor2._0"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF745DB5" Foreground="#FF745DB5">
+	<Window.Resources>
+		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+	</Window.Resources>
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
@@ -50,6 +53,18 @@
 				<ScaleTransform x:Name="MyScaleTransform" ScaleX="1" ScaleY="1"/>
 			</TextBox.LayoutTransform>
 		</TextBox>
-		   
+		<StatusBar Name="stBar"
+			Grid.Row="1" Height="20" Width="120" Margin="670,364,10,10" Background="{x:Null}">
+			
+			<StatusBarItem Content="Готово"/>
+			<StatusBarItem>
+				<ProgressBar Minimum="0" Maximum="100" Value="75"/>
+			</StatusBarItem>
+			<StatusBarItem Content="Прогресс:"/>
+			<StatusBarItem Content="{Binding StatusMessage}"/>
+		</StatusBar>
+		<ProgressBar Height="20"></ProgressBar>
+			
+
 	</Grid>
 </Window>

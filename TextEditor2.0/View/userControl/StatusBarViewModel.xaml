@@ -1,0 +1,71 @@
+﻿<UserControl x:Class="TextEditor2._0.View.userControl.StatusBarViewModel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TextEditor2._0.View.userControl"
+             mc:Ignorable="d" 
+             Height="Auto" Width="Auto">
+	<UserControl.Resources>
+		<local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+
+		<Style x:Key="StatusPopupStyle" TargetType="Border">
+			<Setter Property="RenderTransform">
+				<Setter.Value>
+					<TranslateTransform Y="40"/>
+				</Setter.Value>
+			</Setter>
+			<Setter Property="Opacity" Value="0"/>
+			<Style.Triggers>
+				<DataTrigger Binding="{Binding IsVisible}" Value="True">
+					<DataTrigger.EnterActions>
+						<BeginStoryboard>
+							<Storyboard>
+								<DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                                 To="0" Duration="0:0:0.22" />
+								<DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 To="1" Duration="0:0:0.22" />
+							</Storyboard>
+						</BeginStoryboard>
+					</DataTrigger.EnterActions>
+					<DataTrigger.ExitActions>
+						<BeginStoryboard>
+							<Storyboard>
+								<DoubleAnimation Storyboard.TargetProperty="RenderTransform.(TranslateTransform.Y)"
+                                                 To="40" Duration="0:0:0.18" />
+								<DoubleAnimation Storyboard.TargetProperty="Opacity"
+                                                 To="0" Duration="0:0:0.18" />
+							</Storyboard>
+						</BeginStoryboard>
+					</DataTrigger.ExitActions>
+				</DataTrigger>
+			</Style.Triggers>
+		</Style>
+	</UserControl.Resources>
+
+	<Grid IsHitTestVisible="False">
+		<!-- Позволяет клики проходить под контрол, кроме внутренних элементов -->
+		<Border Style="{StaticResource StatusPopupStyle}"
+                Background="#FF2E7D32" CornerRadius="6"
+                Padding="10" HorizontalAlignment="Center"
+                VerticalAlignment="Bottom" Margin="0,0,0,16"
+                Visibility="{Binding IsVisible, Converter={StaticResource BoolToVisibilityConverter}}"
+                MinWidth="240"
+                Opacity="0.95"
+                IsHitTestVisible="True">
+			<!-- Внутри можно взаимодействовать -->
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+
+				<TextBlock Text="{Binding Message}" Foreground="White" FontWeight="SemiBold" VerticalAlignment="Center" TextWrapping="Wrap"/>
+				<Button Grid.Column="1" Content="✕" Width="28" Height="24" Margin="10,0,0,0"
+                        VerticalAlignment="Center" HorizontalAlignment="Right"
+                        Background="Transparent" BorderThickness="0" Foreground="White"
+                        Click="CloseButton_Click"/>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

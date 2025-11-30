@@ -28,6 +28,7 @@ namespace TextEditor2._0
             InitializeComponent();
         }
 
+        public string StatusMessage { get; set; } = "Инициализация...";
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Window WindowParent = Window.GetWindow(this);
@@ -92,34 +93,32 @@ namespace TextEditor2._0
             file.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
             file.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 
-
             if (file.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-
+            { 
                 string filePath = file.FileName;
                 try
                 {
                     string fileContent = File.ReadAllText(filePath);
-
-
                     txtBox1.Text = fileContent;
-
-
                     MessageBox.Show($"Файл успешно загружен: {System.IO.Path.GetFileName(filePath)}", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                catch (IOException ex)
-                {
-
-                    MessageBox.Show($"Ошибка чтения файла: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                catch (Exception ex)
-                {
-
-                    MessageBox.Show($"Произошла непредвиденная ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
+                catch (IOException ex){MessageBox.Show($"Ошибка чтения файла: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);}
+                catch (Exception ex) { MessageBox.Show($"Произошла непредвиденная ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error); }
             }
 
         }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
