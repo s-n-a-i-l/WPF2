@@ -6,6 +6,7 @@
   <Project Path="IpAdress/IpAdress.csproj" Id="15fa944d-eb06-417b-85e2-64ac8566598b" />
   <Project Path="ListBox/ListBox.csproj" Id="95b5fc28-6ad1-44c7-8a3b-dec4bbdc065c" />
   <Project Path="MenuBar/MenuBar.csproj" Id="8526d435-b0a2-4e9d-8f18-48719bd12f03" />
+  <Project Path="TextEditor/TextEditor.csproj" Id="7cbd1cce-dda7-4796-b9df-6519fed6d63a" />
   <Project Path="WPF/WPF.csproj" Id="f7050442-74d0-41de-8b17-1289dbd968fd" />
   <Project Path="WrK/WrK.csproj" Id="26c184f5-cb64-4e32-bf7e-3e91d38af5c3" />
 </Solution>

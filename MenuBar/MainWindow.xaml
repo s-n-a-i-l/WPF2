@@ -17,7 +17,6 @@
 		<!--<Rectangle Fill="Red"/>
 		<Rectangle Grid.Row="1" Fill="Green"/>
 		<Rectangle Grid.Row="2" Fill="Blue"/>-->
-
 		<userControls:MenuBar/>
 	</Grid>
 </Window>
