@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextEditor"
-		xmlns:userControls="clr-namespace:TextEditor.View.UserControls;assembly=TextEditor"
+		
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#FF745DB5" Foreground="#FF745DB5">
 	<Grid>
@@ -13,9 +13,9 @@
 			<RowDefinition Height="30"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
-		<userControls:MenuBar/>
+		
 
-		<!--<Grid RenderTransformOrigin="0.5,0.435">
+		<Grid RenderTransformOrigin="0.5,0.435">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="9*"/>
 			</Grid.RowDefinitions>
@@ -27,7 +27,8 @@
 				<ColumnDefinition Width="Auto"/>
 			</Grid.ColumnDefinitions>
 			<Button Name="btnSave" Content="Save" Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Click="btnSave_Click"/>
-		</Grid>-->
+		</Grid>
+		
 		<TextBox Name ="txtBox1"
 			Grid.Row="1" Background="#FFE2CAEC" Foreground="#FF745DB5" FontSize="32" Margin="32,7,28,0"
 				ScrollViewer.HorizontalScrollBarVisibility="Auto" />

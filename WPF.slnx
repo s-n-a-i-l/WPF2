@@ -7,6 +7,7 @@
   <Project Path="ListBox/ListBox.csproj" Id="95b5fc28-6ad1-44c7-8a3b-dec4bbdc065c" />
   <Project Path="MenuBar/MenuBar.csproj" Id="8526d435-b0a2-4e9d-8f18-48719bd12f03" />
   <Project Path="TextEditor/TextEditor.csproj" Id="7cbd1cce-dda7-4796-b9df-6519fed6d63a" />
+  <Project Path="TextEditor2.0/TextEditor2.0.csproj" Id="9ffe9d96-456d-4e22-b77e-54a75dcebc5a" />
   <Project Path="WPF/WPF.csproj" Id="f7050442-74d0-41de-8b17-1289dbd968fd" />
   <Project Path="WrK/WrK.csproj" Id="26c184f5-cb64-4e32-bf7e-3e91d38af5c3" />
 </Solution>
