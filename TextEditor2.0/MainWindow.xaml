@@ -8,20 +8,20 @@
         Title="MainWindow" Height="450" Width="800" Background="#FF745DB5" Foreground="#FF745DB5">
 	<Grid>
 		<Grid.RowDefinitions>
-			<RowDefinition Height="30"/>
+			<RowDefinition Height="40"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 
 		<Grid>
 			<Grid.RowDefinitions>
-				<RowDefinition Height="30"/>
+				<RowDefinition Height="40"/>
 			</Grid.RowDefinitions>
 
 			<Menu FontSize="18" Background="#FFA996DC" Foreground="#FF450A82" >
 
 				<MenuItem Header="File">
 					<MenuItem Header="New"/>
-					<MenuItem Header="Open"/>
+					<MenuItem Header="Open" Click="MenuItem_Click_Open"/>
 					<Separator/>
 					<MenuItem Header="Save" Click="MenuItem_Click_Save"/>
 					<MenuItem Header="Save As"/>
@@ -44,6 +44,12 @@
 
 		<TextBox Name ="txtBox1"
 				Grid.Row="1" Background="#FFE2CAEC" Foreground="#FF745DB5" FontSize="32" Margin="32,7,28,0"
-		        ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
+		        ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"
+				 MouseWheel="txtBox1_MouseWheel">
+			<TextBox.LayoutTransform>
+				<ScaleTransform x:Name="MyScaleTransform" ScaleX="1" ScaleY="1"/>
+			</TextBox.LayoutTransform>
+		</TextBox>
+		   
 	</Grid>
 </Window>
