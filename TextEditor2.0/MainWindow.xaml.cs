@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -9,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Animation;
@@ -24,10 +26,6 @@ namespace TextEditor2._0
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
-        {
-            InitializeComponent();
-        }
 
         private bool _isSaveCompletePopupOpen = false;
         public bool IsSaveCompletePopupOpen
@@ -41,11 +39,52 @@ namespace TextEditor2._0
                 }
             }
         }
+        public MainWindow()
+        {
+            InitializeComponent();
+            FillComboBox();
+        }
+
+        public void FillComboBox() 
+        {
+            for (int i = 0; i <= 100; i++)
+            {
+                cbFontSize.Items.Add(i);
+            }
+
+        }
+       
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Window WindowParent = Window.GetWindow(this);
             WindowParent.Close();
         }
+
+
+        private void cbFontStyle_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        { 
+            if (cbFontStyle.SelectedItem is ComboBoxItem item) 
+            { 
+                switch (item.Tag.ToString()) 
+                { 
+                    case "Normal": txtBox1.FontWeight = FontWeights.Normal; txtBox1.FontStyle = FontStyles.Normal; break; 
+                    case "Bold": txtBox1.FontWeight = FontWeights.Bold; txtBox1.FontStyle = FontStyles.Normal; break; 
+                    case "Italic": txtBox1.FontWeight = FontWeights.Normal; txtBox1.FontStyle = FontStyles.Italic; break; 
+                    case "BoldItalic": txtBox1.FontWeight = FontWeights.Bold; txtBox1.FontStyle = FontStyles.Italic; break; 
+                } 
+                
+            } 
+        }
+
+       
+        private void cbFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+             int selectItem = cbFontSize.SelectedIndex + 1;
+             txtBox1.FontSize = selectItem;
+           
+        }
+
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
@@ -62,11 +101,11 @@ namespace TextEditor2._0
                     string textToSave = txtBox1.Text;
 
                     File.WriteAllText(saveFile1.FileName, textToSave);
-                    MessageBox.Show("Файл успешно сохранен.");
+                    System.Windows.MessageBox.Show("Файл успешно сохранен.");
                 }
                 catch (Exception ex)
                 {
-                    System.Windows.Forms.MessageBox.Show($"Ошибка сохранения: {ex.Message}");
+                    System.Windows.MessageBox.Show($"Ошибка сохранения: {ex.Message}");
                 }
                  
             }
@@ -77,7 +116,7 @@ namespace TextEditor2._0
         {
             if (Keyboard.Modifiers == ModifierKeys.Control)
             {
-                TextBox textBox = sender as TextBox;
+                System.Windows.Controls.TextBox textBox = sender as System.Windows.Controls.TextBox;
                 if (textBox != null)
                 {
                     e.Handled = true;
@@ -96,7 +135,7 @@ namespace TextEditor2._0
                     animation.Duration = TimeSpan.FromMilliseconds(150);
                     animation.EasingFunction = new QuarticEase { EasingMode = EasingMode.EaseOut }; 
 
-                    textBox.BeginAnimation(TextBox.FontSizeProperty, animation);
+                    textBox.BeginAnimation(System.Windows.Controls.TextBox.FontSizeProperty, animation);
                 }
             }
         }
@@ -115,10 +154,10 @@ namespace TextEditor2._0
                 {
                     string fileContent = File.ReadAllText(filePath);
                     txtBox1.Text = fileContent;
-                    MessageBox.Show($"Файл успешно загружен: {System.IO.Path.GetFileName(filePath)}", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                    System.Windows.MessageBox.Show($"Файл успешно загружен: {System.IO.Path.GetFileName(filePath)}", "Успех",MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                catch (IOException ex){MessageBox.Show($"Ошибка чтения файла: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);}
-                catch (Exception ex) { MessageBox.Show($"Произошла непредвиденная ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error); }
+                catch (IOException ex){ System.Windows.MessageBox.Show($"Ошибка чтения файла: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);}
+                catch (Exception ex) { System.Windows.MessageBox.Show($"Произошла непредвиденная ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error); }
             }
 
         }
@@ -127,8 +166,6 @@ namespace TextEditor2._0
         {
             
         }
-
-        
 
        
     }

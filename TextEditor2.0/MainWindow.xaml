@@ -31,10 +31,21 @@
 					<Separator/>
 					<MenuItem Header="Quit" Click="MenuItem_Click" Background="#2C2C2C"/>
 				</MenuItem>
-				<ComboBox  x:Name="FontSizeComboBox"
-					   Height="25" Width="40" 
-					   Background="DarkGray" Foreground="#2C2C2C"
-					   IsEditable="True"/>
+
+				<ComboBox Name="cbFontSize" FontSize="16"
+						  Height="25" Width="50" 
+					      Background="DarkGray" Foreground="#2C2C2C"
+					      IsEditable="True" SelectionChanged="cbFontSize_SelectionChanged"/>
+
+				<ComboBox  Name="cbFontStyle" SelectionChanged="cbFontStyle_SelectionChanged" 
+						   Height="25" Width="150" FontSize="16"
+						   Background="DarkGray" Foreground="#2C2C2C"
+						   >
+					<ComboBoxItem Tag="Normal">Обычный</ComboBoxItem>
+					<ComboBoxItem Tag="Bold">Полужирный</ComboBoxItem>
+					<ComboBoxItem Tag="Italic">Курсив</ComboBoxItem>
+					<ComboBoxItem Tag="BoldItalic">Полужирный курсив</ComboBoxItem>
+				</ComboBox>
 
 			</Menu>
 
@@ -45,7 +56,9 @@
 		<TextBox Name ="txtBox1"
 				Grid.Row="1" Background="#333333" Foreground="#F5F5F5" FontSize="32" Margin="32,7,28,0"
 		        ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"
-				 MouseWheel="txtBox1_MouseWheel">
+				MouseWheel="txtBox1_MouseWheel" 
+				SpellCheck.IsEnabled="True"
+				Language="ru-RU">
 			<TextBox.LayoutTransform>
 				<ScaleTransform x:Name="MyScaleTransform" ScaleX="1" ScaleY="1"/>
 			</TextBox.LayoutTransform>
