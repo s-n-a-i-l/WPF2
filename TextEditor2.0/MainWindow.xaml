@@ -4,67 +4,78 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextEditor2._0"
+		
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="#FF745DB5" Foreground="#FF745DB5">
-	<Window.Resources>
-		<BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
-	</Window.Resources>
+        Title="MainWindow" Height="450" Width="800" Background="#1E1E1E" Foreground="#2C2C2C">
+
 	<Grid>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="40"/>
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 
+
+
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="40"/>
 			</Grid.RowDefinitions>
 
-			<Menu FontSize="18" Background="#FFA996DC" Foreground="#FF450A82" >
+			<Menu FontSize="25" Background="#2C2C2C" Foreground="#F5F5F5" >
 
-				<MenuItem Header="File">
-					<MenuItem Header="New"/>
-					<MenuItem Header="Open" Click="MenuItem_Click_Open"/>
+				<MenuItem Header="File" >
+					<MenuItem Header="New" Click="MenuItem_Click_New" Background="#2C2C2C"/>
+					<MenuItem Header="Open" Click="MenuItem_Click_Open" Background="#2C2C2C"/>
 					<Separator/>
-					<MenuItem Header="Save" Click="MenuItem_Click_Save"/>
-					<MenuItem Header="Save As"/>
+					<MenuItem Header="Save" Click="MenuItem_Click_Save" Background="#2C2C2C"/>
 					<Separator/>
-					<MenuItem Header="Quit" Click="MenuItem_Click"/>
+					<MenuItem Header="Quit" Click="MenuItem_Click" Background="#2C2C2C"/>
 				</MenuItem>
-
-				<MenuItem Header="Edit">
-					<MenuItem Header="Find"/>
-					<MenuItem Header="Replace"/>
-					<Separator/>
-					<MenuItem Header="Undo"/>
-					<MenuItem Header="Redo"/>
-				</MenuItem>
+				<ComboBox  x:Name="FontSizeComboBox"
+					   Height="25" Width="40" 
+					   Background="DarkGray" Foreground="#2C2C2C"
+					   IsEditable="True"/>
 
 			</Menu>
+
 
 
 		</Grid>
 
 		<TextBox Name ="txtBox1"
-				Grid.Row="1" Background="#FFE2CAEC" Foreground="#FF745DB5" FontSize="32" Margin="32,7,28,0"
+				Grid.Row="1" Background="#333333" Foreground="#F5F5F5" FontSize="32" Margin="32,7,28,0"
 		        ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"
 				 MouseWheel="txtBox1_MouseWheel">
 			<TextBox.LayoutTransform>
 				<ScaleTransform x:Name="MyScaleTransform" ScaleX="1" ScaleY="1"/>
 			</TextBox.LayoutTransform>
 		</TextBox>
-		<StatusBar Name="stBar"
-			Grid.Row="1" Height="20" Width="120" Margin="670,364,10,10" Background="{x:Null}">
+
+
+
+
+		<!--<StatusBar Name="stBar"
+			Grid.Row="1" Margin="602,310,0,0" Background="{x:Null}">
+
+			<Popup Name="myPopup" 
+               IsOpen="{Binding IsSaveCompletePopupOpen}" 
+               Placement="Center" 
+               AllowsTransparency="True">
+				<Border BorderThickness="1" Background="LightGreen" BorderBrush="Green" Padding="20" CornerRadius="5">
+					<StackPanel>
+						<TextBlock Foreground="DarkGreen" FontWeight="Bold">
+                        Сохранение успешно завершено!
+						</TextBlock>
+						-->
+		<!-- Возможно, кнопка "ОК" внутри Popup для закрытия -->
+		<!--
+					</StackPanel>
+				</Border>
+			</Popup>
 			
-			<StatusBarItem Content="Готово"/>
-			<StatusBarItem>
-				<ProgressBar Minimum="0" Maximum="100" Value="75"/>
-			</StatusBarItem>
-			<StatusBarItem Content="Прогресс:"/>
-			<StatusBarItem Content="{Binding StatusMessage}"/>
-		</StatusBar>
-		<ProgressBar Height="20"></ProgressBar>
-			
+		</StatusBar>-->
+		<!--<ProgressBar Height="20" Margin="-28,344,28,30" Grid.Row="1"></ProgressBar>-->
+
 
 	</Grid>
 </Window>

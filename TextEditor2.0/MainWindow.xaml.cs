@@ -1,6 +1,7 @@
 ﻿using System;
-using System.IO;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WinForms = System.Windows.Forms;
-using System.Windows.Media.Animation;
 
 namespace TextEditor2._0
 {
@@ -28,7 +29,18 @@ namespace TextEditor2._0
             InitializeComponent();
         }
 
-        public string StatusMessage { get; set; } = "Инициализация...";
+        private bool _isSaveCompletePopupOpen = false;
+        public bool IsSaveCompletePopupOpen
+        {
+            get => _isSaveCompletePopupOpen;
+            set
+            {
+                if (_isSaveCompletePopupOpen != value)
+                {
+                    _isSaveCompletePopupOpen = value;
+                }
+            }
+        }
         private void MenuItem_Click(object sender, RoutedEventArgs e)
         {
             Window WindowParent = Window.GetWindow(this);
@@ -37,6 +49,8 @@ namespace TextEditor2._0
 
         private void MenuItem_Click_Save(object sender, RoutedEventArgs e)
         {
+            IsSaveCompletePopupOpen = false;
+
             System.Windows.Forms.SaveFileDialog saveFile1 = new System.Windows.Forms.SaveFileDialog();
             saveFile1.DefaultExt = "*.txt";
             saveFile1.Filter = "Text files|*.txt";
@@ -48,13 +62,15 @@ namespace TextEditor2._0
                     string textToSave = txtBox1.Text;
 
                     File.WriteAllText(saveFile1.FileName, textToSave);
-                    System.Windows.Forms.MessageBox.Show("Текст сохранен успешно!");
+                    MessageBox.Show("Файл успешно сохранен.");
                 }
                 catch (Exception ex)
                 {
                     System.Windows.Forms.MessageBox.Show($"Ошибка сохранения: {ex.Message}");
                 }
+                 
             }
+            
         }
 
         private void txtBox1_MouseWheel(object sender, MouseWheelEventArgs e)
@@ -85,7 +101,6 @@ namespace TextEditor2._0
             }
         }
 
-
         private void MenuItem_Click_Open(object sender, RoutedEventArgs e)
         {
             System.Windows.Forms.OpenFileDialog file = new System.Windows.Forms.OpenFileDialog();
@@ -108,21 +123,14 @@ namespace TextEditor2._0
 
         }
 
+        private void MenuItem_Click_New(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
     }
 
 }

@@ -5,8 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:TextEditor2._0.View.userControl"
              mc:Ignorable="d" 
-             Height="Auto" Width="Auto">
-	<UserControl.Resources>
+             Height="200" Width="150" Background="Wheat">
+	<!--<UserControl.Resources>
 		<local:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
 
 		<Style x:Key="StatusPopupStyle" TargetType="Border">
@@ -44,7 +44,7 @@
 	</UserControl.Resources>
 
 	<Grid IsHitTestVisible="False">
-		<!-- Позволяет клики проходить под контрол, кроме внутренних элементов -->
+		--><!-- Позволяет клики проходить под контрол, кроме внутренних элементов --><!--
 		<Border Style="{StaticResource StatusPopupStyle}"
                 Background="#FF2E7D32" CornerRadius="6"
                 Padding="10" HorizontalAlignment="Center"
@@ -53,7 +53,7 @@
                 MinWidth="240"
                 Opacity="0.95"
                 IsHitTestVisible="True">
-			<!-- Внутри можно взаимодействовать -->
+			--><!-- Внутри можно взаимодействовать --><!--
 			<Grid>
 				<Grid.ColumnDefinitions>
 					<ColumnDefinition/>
@@ -67,5 +67,5 @@
                         Click="CloseButton_Click"/>
 			</Grid>
 		</Border>
-	</Grid>
+	</Grid>-->
 </UserControl>
