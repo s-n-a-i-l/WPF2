@@ -79,9 +79,13 @@ namespace TextEditor2._0
        
         private void cbFontSize_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-             int selectItem = cbFontSize.SelectedIndex + 1;
-             txtBox1.FontSize = selectItem;
+
+            try
+            {
+                int selectItem = cbFontSize.SelectedIndex + 1;
+                txtBox1.FontSize = selectItem;
+            }
+            catch (Exception ex) { System.Windows.MessageBox.Show($"Ошибка изменения размера шрифта: {ex.Message}"); }
            
         }
 
