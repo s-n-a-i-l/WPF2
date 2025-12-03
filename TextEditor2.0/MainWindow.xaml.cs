@@ -110,7 +110,7 @@ namespace TextEditor2._0
             {
                 try
                 {
-                    // Сохраняем только текст без форматирования
+                    
                     string textToSave = new TextRange(
                         txtBox1.Document.ContentStart, txtBox1.Document.ContentEnd
                     ).Text;
