@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TextEditor2._0"
-		
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="#1E1E1E" Foreground="#2C2C2C">
 
@@ -40,12 +39,7 @@
 				<ComboBox  Name="cbFontStyle" SelectionChanged="cbFontStyle_SelectionChanged" 
 						   Height="25" Width="150" FontSize="16"
 						   Background="DarkGray" Foreground="#2C2C2C"
-						   >
-					<ComboBoxItem Tag="Normal">Обычный</ComboBoxItem>
-					<ComboBoxItem Tag="Bold">Полужирный</ComboBoxItem>
-					<ComboBoxItem Tag="Italic">Курсив</ComboBoxItem>
-					<ComboBoxItem Tag="BoldItalic">Полужирный курсив</ComboBoxItem>
-				</ComboBox>
+						   />
 
 			</Menu>
 
@@ -53,7 +47,7 @@
 
 		</Grid>
 
-		<TextBox Name ="txtBox1"
+		<!--<TextBox Name ="txtBox1"
 				Grid.Row="1" Background="#333333" Foreground="#F5F5F5" FontSize="32" Margin="32,7,28,0"
 		        ScrollViewer.VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"
 				MouseWheel="txtBox1_MouseWheel" 
@@ -62,8 +56,21 @@
 			<TextBox.LayoutTransform>
 				<ScaleTransform x:Name="MyScaleTransform" ScaleX="1" ScaleY="1"/>
 			</TextBox.LayoutTransform>
-		</TextBox>
-
+		</TextBox>-->
+		<RichTextBox Name="txtBox1"
+             Grid.Row="1"
+             Background="#333333"
+             Foreground="#F5F5F5"
+             FontSize="32"
+             Margin="32,7,28,0"
+             ScrollViewer.VerticalScrollBarVisibility="Visible"
+             MouseWheel="txtBox1_MouseWheel"
+             SpellCheck.IsEnabled="True"
+             Language="ru-RU">
+			<RichTextBox.LayoutTransform>
+				<ScaleTransform x:Name="MyScaleTransform" ScaleX="1" ScaleY="1"/>
+			</RichTextBox.LayoutTransform>
+		</RichTextBox>
 
 
 
