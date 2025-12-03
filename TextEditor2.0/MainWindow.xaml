@@ -13,8 +13,6 @@
 			<RowDefinition/>
 		</Grid.RowDefinitions>
 
-
-
 		<Grid>
 			<Grid.RowDefinitions>
 				<RowDefinition Height="40"/>
@@ -72,29 +70,6 @@
 			</RichTextBox.LayoutTransform>
 		</RichTextBox>
 
-
-
-		<!--<StatusBar Name="stBar"
-			Grid.Row="1" Margin="602,310,0,0" Background="{x:Null}">
-
-			<Popup Name="myPopup" 
-               IsOpen="{Binding IsSaveCompletePopupOpen}" 
-               Placement="Center" 
-               AllowsTransparency="True">
-				<Border BorderThickness="1" Background="LightGreen" BorderBrush="Green" Padding="20" CornerRadius="5">
-					<StackPanel>
-						<TextBlock Foreground="DarkGreen" FontWeight="Bold">
-                        Сохранение успешно завершено!
-						</TextBlock>
-						-->
-		<!-- Возможно, кнопка "ОК" внутри Popup для закрытия -->
-		<!--
-					</StackPanel>
-				</Border>
-			</Popup>
-			
-		</StatusBar>-->
-		<!--<ProgressBar Height="20" Margin="-28,344,28,30" Grid.Row="1"></ProgressBar>-->
 
 
 	</Grid>
